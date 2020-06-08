@@ -1,6 +1,6 @@
 <html>
 <head>
-    <title>threejs - models - 1</title>
+    <title>threejs - models - 2</title>
 
     <style>
     	body{
@@ -37,7 +37,7 @@
 
     //SCENE
     scene = new THREE.Scene();
-	    scene.background = new THREE.Color(0xffff00);
+    scene.background = new THREE.Color(0xffff00);
 
     //LIGHTS
     var light = new THREE.AmbientLight(0xffffff, 0.5);
@@ -54,11 +54,17 @@
 
     function handle_load(gltf) {
 
+
         console.log(gltf);
         mesh = gltf.scene;
-        console.log(mesh.children[0]);
-        mesh.children[0].material = new THREE.MeshLambertMaterial();
-		scene.add( mesh );
+            
+        // animation
+        mixer = new THREE.AnimationMixer(mesh);
+        var animation = mesh.animation[0];
+        var action = mixer.clipAction(animation);
+            
+            
+        // position
         mesh.position.z = -10;
     }
 
@@ -71,7 +77,8 @@
 
     function render() {
 
-        delta += 0.1;
+        delta = clock.getDelta;
+        
 
         if (mesh) {
         
