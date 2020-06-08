@@ -58,6 +58,12 @@ function loadModels() {
 
   const loader = new THREE.GLTFLoader();
   
+    // the loader will report the loading progress to this function
+  const onProgress = () => {};
+
+  // the loader will send any error messages to this function, and we'll log
+  // them to to console
+  const onError = ( errorMessage ) => { console.log( errorMessage ); };
   const flamingoPosition = new THREE.Vector3( 0, 0, 2.5 );
   loader.load( 'js/Flamingo.glb', gltf => onLoad( gltf, flamingoPosition ), onProgress, onError );
   
@@ -80,12 +86,7 @@ function loadModels() {
 
   };
 
-  // the loader will report the loading progress to this function
-  const onProgress = () => {};
 
-  // the loader will send any error messages to this function, and we'll log
-  // them to to console
-  const onError = ( errorMessage ) => { console.log( errorMessage ); };
 
   // load the first model. Each model is loaded asynchronously,
   // so don't make any assumption about which one will finish loading first
