@@ -13,7 +13,7 @@ function init() {
   container = document.querySelector( '#scene-container' );
 
   scene = new THREE.Scene();
-  scene.background = new THREE.Color( 0xff00ff );
+  scene.background = new THREE.Color( 0x00ffff );
 
   createCamera();
   createControls();
@@ -91,7 +91,7 @@ function loadModels() {
   //loader.load( 'models/Parrot.glb', gltf => onLoad( gltf, parrotPosition ), onProgress, onError );
 
   const flamingoPosition = new THREE.Vector3( 0, 0, 2.5 );
-  loader.load( 'models/Flamingo.glb', gltf => onLoad( gltf, flamingoPosition ), onProgress, onError );
+  loader.load( 'Flamingo.glb', gltf => onLoad( gltf, flamingoPosition ), onProgress, onError );
 
   //const storkPosition = new THREE.Vector3( 0, -2.5, -10 );
   //loader.load( 'models/Stork.glb', gltf => onLoad( gltf, storkPosition ), onProgress, onError );
