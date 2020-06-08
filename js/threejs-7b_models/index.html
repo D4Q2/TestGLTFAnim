@@ -62,7 +62,7 @@
         mixer = new THREE.AnimationMixer(mesh);
         var animation = mesh.animation[0];
         var action = mixer.clipAction(animation);
-            
+        action.play();
             
         // position
         mesh.position.z = -10;
