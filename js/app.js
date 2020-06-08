@@ -74,7 +74,7 @@ function loadModels() {
     const model = gltf.scene.children[ 0 ];
     model.position.copy( position );
 
-    const animation = gltf.animations[ 0 ];
+    const animation = gltf.animations[ 1 ];
 
     const mixer = new THREE.AnimationMixer( model );
     mixers.push( mixer );
