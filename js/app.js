@@ -57,7 +57,10 @@ function createLights() {
 function loadModels() {
 
   const loader = new THREE.GLTFLoader();
-
+  
+  const flamingoPosition = new THREE.Vector3( 0, 0, 2.5 );
+  loader.load( 'js/Flamingo.glb', gltf => onLoad( gltf, flamingoPosition ), onProgress, onError );
+  
   // A reusable function to set up the models. We're passing in a position parameter
   // so that they can be individually placed around the scene
   const onLoad = ( gltf, position ) => {
@@ -89,9 +92,6 @@ function loadModels() {
   
   //const parrotPosition = new THREE.Vector3( 0, 0, 2.5 );
   //loader.load( 'models/Parrot.glb', gltf => onLoad( gltf, parrotPosition ), onProgress, onError );
-
-  const flamingoPosition = new THREE.Vector3( 0, 0, 2.5 );
-  loader.load( 'Flamingo.glb', gltf => onLoad( gltf, flamingoPosition ), onProgress, onError );
 
   //const storkPosition = new THREE.Vector3( 0, -2.5, -10 );
   //loader.load( 'models/Stork.glb', gltf => onLoad( gltf, storkPosition ), onProgress, onError );
